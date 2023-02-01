@@ -1,7 +1,6 @@
-def fibonacci_number(n):
+def fibonacci_number(n, memo={}):
     if n <= 1:
         return n
-
     return fibonacci_number(n - 1) + fibonacci_number(n - 2)
 
 
