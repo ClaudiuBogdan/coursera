@@ -14,29 +14,24 @@ function readLine(line) {
   process.exit();
 }
 
-function fib(n, memo = new Map()) {
-  // write your code here
-  if (n <= 1) return BigInt(n);
+function binet(n) {
+  // pre-calculate sqrt(5) as we use it three times
+  let sqrt5 = BigInt(Math.sqrt(5));
 
-  const val1 = memoizeOrCompute(n - 1, memo);
-  const val2 = memoizeOrCompute(n - 2, memo);
-
-  return val1 + val2;
+  return round((pow(1 + sqrt5, n) - pow(1 - sqrt5, n)) / (pow(2, n) * sqrt5));
 }
 
-function memoizeOrCompute(n, memo) {
-  if (memo.has(n)) {
-    return memo.get(n);
-  } else {
-    const val = fib(n, memo);
-    memo.set(n, val);
-    return val;
-  }
+function round(n) {
+  return n;
+}
+
+function pow(n, m) {
+  return n ** m;
 }
 
 function fibonacciLastDigit(n) {
-  const val = fib(n);
-  return Number(val % 10n);
+  const val = binet(n);
+  return Number(val % 10);
 }
 
 module.exports = fibonacciLastDigit;
