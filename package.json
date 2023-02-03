@@ -1,0 +1,13 @@
+{
+  "name": "coursera",
+  "version": "1.0.0",
+  "description": "Coursera lectures",
+  "main": "index.ts",
+  "scripts": {
+    "start": "deno run index.ts",
+    "format": "deno fmt",
+    "test": "deno test"
+  },
+  "author": "",
+  "license": "ISC"
+}
