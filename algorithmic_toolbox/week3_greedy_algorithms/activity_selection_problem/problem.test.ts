@@ -15,4 +15,11 @@ describe("Activity selection problem", () => {
     const solution = getMaxActivities(activities);
     assertEquals(solution, expected);
   });
+
+  it('should return an empty array if provided with an empty array', ()=> {
+    const activities: Array<[number, number]> = []
+    const expected: number[] = []
+    const solution = getMaxActivities(activities)
+    assertEquals(solution, expected)
+  })
 });
